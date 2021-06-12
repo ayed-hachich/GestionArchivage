@@ -1,0 +1,55 @@
+<!--Extended Table starts-->
+<div class="row">
+    <div class="col-12">
+      <div class="content-header">tableau des types des fichiers</div>
+    </div>
+  </div>
+  <button id="bt" (click)="openContent()"  type="button"  class="btn btn-outline-primary mr-1 mb-1 ">Ajouter</button>
+  
+  
+  
+  <section id="extended">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Types</h4>
+          </div>
+          <div class="card-content">
+            <div class="card-body table-responsive">
+              <table class="table text-center m-0">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Nom-Type</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let type of types">
+                  <tr>
+                    <td>{{type.id}}</td>
+                    
+                    <td>{{type.nom_type}}</td>
+                   
+                    <td class="text-truncate">
+                      
+                      <a  class="success p-0" (click)="openContentedite()" >
+                        <i class="ft-edit-2 font-medium-3 mr-2"></i>
+                      </a>
+                      <a  class="danger p-0" (click) = "delete(type.id)" (click)="openContentdelite()" >
+                        <i class="ft-x font-medium-3"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Extended Table Ends-->
+    
+        

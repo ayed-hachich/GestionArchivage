@@ -1,0 +1,96 @@
+<section class="kb-wrapper">
+    <!-- Knowledge base search start -->
+    <div class="kb-search">
+      <div class="row">
+        <div class="col-12">
+          <div class="card bg-transparent shadow-none kb-header py-3">
+            <div class="card-content">
+              <div class="card-body text-center p-md-5">
+                <h1 class="mb-2 kb-title">How can we help you today?</h1>
+             
+                <form>
+                  <div class="form-group position-relative w-50 mx-auto kb-search-input">
+                    <input type="text" class="form-control form-control-lg shadow round p-3 font-medium-1" id="searchbar"  placeholder="Find from talk..">
+                    <button id="aa" class="btn btn-primary round position-absolute" type="button">
+                      <span class="d-none d-sm-block">Search</span>
+                      <i class="ft-search d-block d-sm-none"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Knowledge base search ends -->
+    
+  </section>
+  
+  <div class="row">
+      <div class="col-12">
+        <div class="content-header">tableau des fichiers</div>
+      </div>
+    </div>
+    <button id="bt"  type="button" class="btn btn-outline-primary mr-1 mb-1 "><a [routerLink]="['/ajoute-fichier']">Ajouter</a></button>
+    <section id="extended">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title">fichiers</h4>
+            </div>
+            <div class="card-content">
+              <div class="card-body table-responsive">
+                <table class="table text-center m-0">
+                  <thead>
+                    <tr>
+                      <th>Id</th>
+                      <th>Nom-fichier</th>
+                      <th>Société</th>
+                      <th>Type-Fichier</th>
+                      <th>Fichier</th>
+                      <th>Extension</th>
+                      <th>Date-d'installation</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let fich of fichiers">
+                    <tr>
+                   
+                      
+                      <td>{{fich.id}}</td>
+                      <td>{{fich.nom_fichier}}</td>
+                      <td>{{fich.societe}} </td>
+                      <td>{{fich.type_fichier}}</td>
+                      <td>{{fich.fichier}}</td> 
+                      <td>{{fich.extension}}</td>
+                      <td>{{fich.date_installation}}</td>
+                     
+                     
+                      <td class="text-truncate">
+                        
+                        <a  class="success p-0"  (click) = "Goto(fich.id)">
+                          <i class="ft-edit-2 font-medium-3 mr-2"></i>
+                        </a>
+                        <a  class="danger p-0" (click)="openContent()"  (click) = "delete(fich.id)">
+                          <i class="ft-x font-medium-3"></i>
+                        </a>
+                        
+                      </td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--Extended Table Ends-->
+    
+  
+    
+  
